@@ -12,7 +12,7 @@ set(:shared_data_dir) { "#{deploy_to}/shared/data" }
 set :use_sudo, false
 set :local_project_path, "/Users/justin/Code/PivotalPlanningPoker"
 
-set :repository, "git@github.com:jsl/pivotal_planning_poker.git"
+set :repository, "git@github.com:stackbuilders/pivotal_planning_poker.git"
 
 set :keep_releases, 5
 set :repository_cache, "git_cache"
