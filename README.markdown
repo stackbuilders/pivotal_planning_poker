@@ -7,7 +7,8 @@ facilitating group estimation of stories.
 
 ## Try it out!
 
-Pivotal Planning Poker is easy to use.  [We have set up an instance that you can use for test purposes](http://poker.stackbuilders.com).
+Pivotal Planning Poker is easy to use.  [Try it out on our server](http://poker.stackbuilders.com), and
+install it on your own if you're so inspired.
 
 ## Author
 
