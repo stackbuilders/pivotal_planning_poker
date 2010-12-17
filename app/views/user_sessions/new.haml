@@ -1,0 +1,12 @@
+%h1 Log in
+
+= form_for :user, :url => user_sessions_path do |f|
+  %p
+    Username:
+    = f.text_field 'username'
+
+  %p
+    Password:
+    = f.password_field 'password'
+
+  = submit_tag "Log in to Tracker"

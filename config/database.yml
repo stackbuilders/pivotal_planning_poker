@@ -1,0 +1,9 @@
+development:
+  adapter: mysql
+  database: pivotal_planning_poker_development
+  user: root
+
+test:
+  adapter: mysql
+  database: pivotal_planning_poker_test
+  user: root

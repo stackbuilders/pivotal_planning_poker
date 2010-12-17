@@ -1,0 +1,44 @@
+= javascript_include_tag 'estimates'
+= javascript_include_tag 'jquery.periodicalupdater.js'
+
+= hidden_field_tag 'reveal_estimate_url', reveal_project_story_estimates_path(@story.project_id, @story.story_id)
+= hidden_field_tag 'estimate_url', project_story_estimates_path(@story.project_id, @story.story_id)
+= hidden_field_tag 'current_username', @user.username
+
+.span-24.last
+  %h2= @story.story_name
+
+  %p= @story.description
+  
+.span-24.last
+  %h3 Estimation Cards
+
+.span-24.last
+  #estimates
+    %p Please wait, retrieving estimates...
+
+.span-24.last
+  #your_estimate
+
+.span-24.last
+  %p Throw an estimate for this story:
+
+.span-24.last
+  - @project.point_scale_array.each_with_index do |point, index|
+    %div{:class => column_class_for('span-4', @project.point_scale_array.size, index) + ' availablePointBox'}
+      .availablePoint= point
+      .availablePointButton= button_to("Throw", project_story_estimates_path(:user_project_id =>  @project.project_id, :story_id => @story.story_id, :user_id => @user.user_id, :estimate => point), :class => 'large')
+
+.span-24.last.prepend-top
+  %h3 Set the Estimate on this Story in Pivotal Tracker
+
+  #tracker_estimate
+    %p Please wait, retrieving Pivotal Tracker estimate...
+
+  - form_tag project_story_path(@project.project_id, @story.story_id), :method => :put do
+    = label_tag('estimate')
+    = select_tag('estimate', options_for_select(@project.point_scale_array.each_with_index, :selected => @story.estimate))
+    = submit_tag('Set estimate in Pivotal Tracker')
+
+  %p.prepend-top
+    = link_to("Back to all stories", project_path(@project.project_id))

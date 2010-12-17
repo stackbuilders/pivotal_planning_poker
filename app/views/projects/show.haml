@@ -1,0 +1,14 @@
+%h2= @project.project_name
+
+%p
+  This project allows estimates of #{@project.point_scale_array.to_sentence}.
+
+%h2 Stories
+
+%ul
+  - @stories.each do |story|
+    %li
+      = link_to(story.story_name, project_story_path(story.project_id, story.story_id))
+      = " Estimate: #{estimate_for(story)}"
+
+%p= link_to("Back to projects", projects_path)

@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title Pivotal Planning Poker
+    = stylesheet_link_tag 'blueprint/screen'
+    = stylesheet_link_tag 'blueprint/print', :media => 'print'
+    = stylesheet_link_tag 'poker'
+    
+    /[if lt IE 8]
+      = stylesheet_link_tag 'blueprint/ie'
+    
+  %body
+    = javascript_include_tag 'jquery'
+    = csrf_meta_tag
+
+    .container
+      .span-24.last
+        %h1 Pivotal Tracker Planning Poker
+
+      - if flash.any?
+        .span-24.last
+          = flash_messages
+
+      = yield

@@ -1,0 +1,10 @@
+.availablePointBox {
+  border: 2px solid; }
+
+.availablePoint {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center; }
+
+.availablePointButton {
+  text-align: center; }
