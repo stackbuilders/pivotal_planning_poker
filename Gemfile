@@ -6,6 +6,7 @@ gem 'mysql'
 gem 'curb', '0.7.8'
 gem 'nokogiri', '1.4.4'
 gem 'haml', '3.0.24'
+gem 'heroku', '2.14.0'
 
 group :test, :development do
   gem 'rspec-rails', '2.2.1'
